@@ -3,103 +3,121 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StrokeSense - Learn Baybayin the Smart Way</title>
+  <title>StrokeSense</title>
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Smooth Scroll -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
+
 <body>
+  <!-- Dark Mode Toggle -->
+  <button class="dark-toggle" id="darkToggle">🌙</button>
 
-<!-- Navbar -->
-<header class="navbar">
-  <div class="logo">StrokeSense</div>
-  <a href="#start" class="nav-btn">Start Learning</a>
-</header>
+  <!-- Scroll to Top Button -->
+  <button class="scroll-top" id="scrollTop">⬆</button>
 
-<!-- Hero -->
-<section class="hero">
-  <h1>Learn Baybayin the Smart and Fun Way</h1>
-  <p>Preserve Filipino heritage through an interactive AI handwriting game.</p>
-  <a href="#about" class="btn">Discover More</a>
-</section>
-
-<!-- Why Baybayin -->
-<section class="intro" id="about">
-  <h2>Why Baybayin Matters</h2>
-  <p>Baybayin is a powerful symbol of Filipino identity and culture. Today, fewer young Filipinos can read or write Baybayin. StrokeSense helps preserve this cultural treasure through modern learning tools.</p>
-</section>
-
-<!-- Features -->
-<section class="features">
-  <div class="feature-card">
-    <h3>Instant Feedback</h3>
-    <p>AI checks your strokes in real time: angle, order, and accuracy.</p>
-  </div>
-  <div class="feature-card">
-    <h3>Gamified Learning</h3>
-    <p>Earn points, unlock badges, and level up as you progress.</p>
-  </div>
-  <div class="feature-card">
-    <h3>Progress Tracking</h3>
-    <p>Visual charts help you see improvement and reach milestones.</p>
-  </div>
-</section>
-
-<!-- Visual -->
-<section class="visual">
-  <img src="https://via.placeholder.com/900x400" alt="StrokeSense preview" />
-</section>
-
-<!-- How It Works -->
-<section class="details">
-  <h2>How StrokeSense Works</h2>
-  <div class="steps">
-    <div>
-      <h4>1. Write</h4>
-      <p>Draw Baybayin characters on your device using touch or mouse.</p>
+  <header class="hero" id="home">
+    <div class="hero-content">
+      <h1>StrokeSense</h1>
+      <p>Learn Baybayin the Smart and Fun Way</p>
+      <a href="#features" class="cta">Start Learning</a>
     </div>
-    <div>
-      <h4>2. Get Feedback</h4>
-      <p>AI highlights mistakes and shows how to correct your strokes.</p>
+
+    <!-- Animated Baybayin SVG -->
+    <div class="baybayin-svg">
+      <svg width="180" height="180" viewBox="0 0 200 200">
+        <path id="stroke" d="M40 100 Q100 20 160 100 Q100 180 40 100" stroke-width="12" stroke="#F8D33A" fill="none" stroke-linecap="round"/>
+      </svg>
     </div>
-    <div>
-      <h4>3. Earn Rewards</h4>
-      <p>Complete levels, earn badges, and unlock advanced characters.</p>
+  </header>
+
+  <!-- Features Section -->
+  <section id="features">
+    <h2 class="section-title">Why StrokeSense Matters</h2>
+    <div class="card-container">
+
+      <div class="card reveal">
+        <h3>Interactive Writing</h3>
+        <p>Practice Baybayin strokes with real-time AI feedback that guides your learning process.</p>
+      </div>
+
+      <div class="card reveal">
+        <h3>Gamified Levels</h3>
+        <p>Earn points, unlock achievements, and master the script through challenges.</p>
+      </div>
+
+      <div class="card reveal">
+        <h3>Progress Tracking</h3>
+        <p>Visual charts show your improvement over time. Build confidence every session.</p>
+      </div>
+
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Benefits -->
-<section class="intro">
-  <h2>Why StrokeSense Is Effective</h2>
-  <p>StrokeSense converts Baybayin learning into a game. It replaces boring memorization with interactive writing and cultural insights.</p>
-</section>
+  <!-- Info Section -->
+  <section id="info">
+    <h2 class="section-title">How StrokeSense Works</h2>
+    <p class="info-text">
+      StrokeSense turns Baybayin learning into a fun experience using AI and gamification.
+      Write on your screen, receive instant feedback, and advance levels while discovering
+      rich Filipino heritage.
+    </p>
+  </section>
 
-<!-- Who Can Use -->
-<section class="details">
-  <h2>Who Can Use StrokeSense?</h2>
-  <div class="steps">
-    <div><p>Students in school or online classes</p></div>
-    <div><p>Heritage learners around the world</p></div>
-    <div><p>Teachers and cultural centers</p></div>
-  </div>
-</section>
+  <!-- CTA -->
+  <section id="cta">
+    <h2>Start Your Cultural Journey</h2>
+    <a href="#home" class="cta">Try StrokeSense</a>
+  </section>
 
-<!-- Unique Value -->
-<section class="intro">
-  <h2>What Makes StrokeSense Different?</h2>
-  <p>Unlike language apps, StrokeSense focuses on handwriting — not just recognition. AI gives real-time feedback and cultural context with every character.</p>
-</section>
+  <footer>
+    <p>© 2025 StrokeSense | Preserving Filipino Heritage</p>
+  </footer>
 
-<!-- CTA -->
-<section class="cta" id="start">
-  <h2>Start Your Baybayin Journey Today</h2>
-  <p>Write. Learn. Remember the past — one stroke at a time.</p>
-  <a href="#" class="btn gold">Start Now</a>
-</section>
+<script>
+  // Dark Mode Toggle
+  const toggle = document.getElementById("darkToggle");
+  toggle.onclick = () => {
+    document.body.classList.toggle("dark");
+  };
 
-<!-- Footer -->
-<footer>
-  <p>© 2024 StrokeSense. All rights reserved.</p>
-</footer>
+  // Scroll to Top
+  const scrollTop = document.getElementById("scrollTop");
+  window.onscroll = () => {
+    scrollTop.style.display = window.scrollY > 400 ? "block" : "none";
+  };
+  scrollTop.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
+  // Scroll Reveal Animation
+  const cards = document.querySelectorAll('.reveal');
+  function showCards() {
+    for(let card of cards) {
+      const rect = card.getBoundingClientRect();
+      if(rect.top < window.innerHeight - 100) {
+        card.classList.add('visible');
+      }
+    }
+  }
+  window.addEventListener('scroll', showCards);
+  showCards();
+
+  // SVG Stroke Animation
+  const path = document.getElementById("stroke");
+  path.style.strokeDasharray = path.getTotalLength();
+  path.style.strokeDashoffset = path.getTotalLength();
+  window.onload = () => {
+    path.style.transition = "stroke-dashoffset 3s ease";
+    path.style.strokeDashoffset = "0";
+  };
+</script>
 
 </body>
 </html>
