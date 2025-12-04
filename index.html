@@ -9,6 +9,9 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
+  <!-- Remix Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
+
   <!-- Smooth Scroll -->
   <style>
     html {
@@ -18,69 +21,107 @@
 </head>
 
 <body>
-  <!-- Dark Mode Toggle -->
-  <button class="dark-toggle" id="darkToggle">🌙</button>
 
-  <!-- Scroll to Top Button -->
-  <button class="scroll-top" id="scrollTop">⬆</button>
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">StrokeSense</div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#cta">Start</a></li>
+  </ul>
+</nav>
 
-  <header class="hero" id="home">
-    <div class="hero-content">
-      <h1>StrokeSense</h1>
-      <p>Learn Baybayin the Smart and Fun Way</p>
-      <a href="#features" class="cta">Start Learning</a>
+<!-- Dark Mode Toggle -->
+<button class="dark-toggle" id="darkToggle">🌙</button>
+
+<!-- Scroll to Top Button -->
+<button class="scroll-top" id="scrollTop">⬆</button>
+
+<header class="hero" id="home">
+  <div class="hero-content">
+    <h1>StrokeSense</h1>
+    <p>Learn Baybayin the Smart and Fun Way</p>
+    <a href="#features" class="cta">Start Learning</a>
+  </div>
+
+  <!-- Animated Baybayin SVG -->
+  <div class="baybayin-svg">
+    <svg width="180" height="180" viewBox="0 0 200 200">
+      <path id="stroke" d="M40 100 Q100 20 160 100 Q100 180 40 100" stroke-width="12" stroke="#F8D33A" fill="none" stroke-linecap="round"/>
+    </svg>
+  </div>
+</header>
+
+<!-- Features Section -->
+<section id="features">
+  <h2 class="section-title">Why StrokeSense Matters</h2>
+  <div class="card-container">
+
+    <div class="card reveal">
+      <i class="ri-input-method-fill icon"></i>
+      <h3>Interactive Writing</h3>
+      <p>Practice Baybayin strokes with real-time AI feedback that guides your learning process.</p>
     </div>
 
-    <!-- Animated Baybayin SVG -->
-    <div class="baybayin-svg">
-      <svg width="180" height="180" viewBox="0 0 200 200">
-        <path id="stroke" d="M40 100 Q100 20 160 100 Q100 180 40 100" stroke-width="12" stroke="#F8D33A" fill="none" stroke-linecap="round"/>
-      </svg>
+    <div class="card reveal">
+      <i class="ri-gamepad-fill icon"></i>
+      <h3>Gamified Levels</h3>
+      <p>Earn points, unlock achievements, and master the script through challenges.</p>
     </div>
-  </header>
 
-  <!-- Features Section -->
-  <section id="features">
-    <h2 class="section-title">Why StrokeSense Matters</h2>
-    <div class="card-container">
-
-      <div class="card reveal">
-        <h3>Interactive Writing</h3>
-        <p>Practice Baybayin strokes with real-time AI feedback that guides your learning process.</p>
-      </div>
-
-      <div class="card reveal">
-        <h3>Gamified Levels</h3>
-        <p>Earn points, unlock achievements, and master the script through challenges.</p>
-      </div>
-
-      <div class="card reveal">
-        <h3>Progress Tracking</h3>
-        <p>Visual charts show your improvement over time. Build confidence every session.</p>
-      </div>
-
+    <div class="card reveal">
+      <i class="ri-bar-chart-fill icon"></i>
+      <h3>Progress Tracking</h3>
+      <p>Visual charts show your improvement over time. Build confidence every session.</p>
     </div>
-  </section>
 
-  <!-- Info Section -->
-  <section id="info">
-    <h2 class="section-title">How StrokeSense Works</h2>
-    <p class="info-text">
-      StrokeSense turns Baybayin learning into a fun experience using AI and gamification.
-      Write on your screen, receive instant feedback, and advance levels while discovering
-      rich Filipino heritage.
-    </p>
-  </section>
+  </div>
+</section>
 
-  <!-- CTA -->
-  <section id="cta">
-    <h2>Start Your Cultural Journey</h2>
-    <a href="#home" class="cta">Try StrokeSense</a>
-  </section>
+<!-- Testimonials Section -->
+<section id="testimonials">
+  <h2 class="section-title">What Users Say</h2>
+  <div class="card-container">
 
-  <footer>
-    <p>© 2025 StrokeSense | Preserving Filipino Heritage</p>
-  </footer>
+    <div class="test-card reveal">
+      <p>"StrokeSense helped me write Baybayin properly in just a few days. The AI feedback is amazing!"</p>
+      <h4>- Ana, Student</h4>
+    </div>
+
+    <div class="test-card reveal">
+      <p>"My students love this! The gamification keeps them excited to learn every class."</p>
+      <h4>- Mark, Teacher</h4>
+    </div>
+
+    <div class="test-card reveal">
+      <p>"As a Filipino abroad, StrokeSense helped me reconnect with my heritage in a fun way."</p>
+      <h4>- Lea, Heritage Learner</h4>
+    </div>
+
+  </div>
+</section>
+
+<!-- Info Section -->
+<section id="info">
+  <h2 class="section-title">How StrokeSense Works</h2>
+  <p class="info-text">
+    StrokeSense turns Baybayin learning into a fun experience using AI and gamification.
+    Write on your screen, receive instant feedback, and advance levels while discovering
+    rich Filipino heritage.
+  </p>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <h2>Start Your Cultural Journey</h2>
+  <a href="#home" class="cta">Try StrokeSense</a>
+</section>
+
+<footer>
+  <p>© 2025 StrokeSense | Preserving Filipino Heritage</p>
+</footer>
 
 <script>
   // Dark Mode Toggle
