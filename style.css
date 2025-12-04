@@ -4,13 +4,14 @@ body {
   font-family: 'Montserrat', sans-serif;
   background: #FAFAFA;
   color: #121212;
-  transition: 0.3s;
+  transition: 0.3s ease-in-out;
   padding-top: 70px;
+  overflow-x: hidden;
 }
 
 .dark {
   background: #121212;
-  color: white;
+  color: #ffffff;
 }
 
 h1, h2 {
@@ -23,18 +24,24 @@ h1, h2 {
   top: 0;
   width: 100%;
   background: rgba(18, 18, 18, 0.7);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 14px 40px;
   z-index: 1000;
+  transition: background 0.4s ease;
 }
 
-.navbar .logo {
-  font-size: 1.4rem;
-  font-weight: bold;
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
   color: #F8D33A;
+  text-shadow: 0 0 5px rgba(255, 218, 99, 0.5);
 }
 
 .nav-links {
@@ -47,25 +54,47 @@ h1, h2 {
   color: white;
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.9rem;
-  transition: 0.3s;
+  font-size: 0.95rem;
+  transition: color 0.3s;
 }
 
 .nav-links a:hover {
   color: #F8D33A;
 }
 
-/* HERO */
-header.hero {
-  height: 90vh;
+/* HERO SECTION */
+.hero {
+  height: 95vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: linear-gradient(135deg, #0077B6, #E63946);
-  color: white;
   padding: 20px;
+  background: linear-gradient(135deg, #0077B6, #E63946, #F8D33A);
+  background-size: 300% 300%;
+  animation: gradientFlow 12s ease infinite;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* PARALLAX FLOATING SVG */
+.baybayin-svg {
+  margin-top: 30px;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
 }
 
 /* CTA BUTTON */
@@ -77,18 +106,20 @@ header.hero {
   font-weight: bold;
   border-radius: 6px;
   text-decoration: none;
-  transition: 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .cta:hover {
-  transform: scale(1.05);
+  transform: scale(1.07);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
 
 /* SECTION TITLE */
 .section-title {
   text-align: center;
   margin: 60px 0 20px;
-  font-size: 2rem;
+  font-size: 2.2rem;
 }
 
 /* FEATURES */
@@ -104,10 +135,10 @@ header.hero {
   width: 300px;
   padding: 25px;
   background: white;
-  border-radius: 10px;
+  border-radius: 12px;
   box-shadow: 0 4px 18px rgba(0,0,0,0.15);
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(50px);
   transition: all 0.6s ease;
   text-align: center;
 }
@@ -118,7 +149,7 @@ header.hero {
 }
 
 .icon {
-  font-size: 2.4rem;
+  font-size: 2.6rem;
   margin-bottom: 10px;
   color: #0077B6;
 }
@@ -131,9 +162,8 @@ header.hero {
   border-radius: 12px;
   box-shadow: 0 4px 18px rgba(0,0,0,0.15);
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(50px);
   transition: all 0.6s ease;
-  text-align: left;
   font-style: italic;
 }
 
@@ -156,7 +186,7 @@ header.hero {
   text-align: center;
 }
 
-/* CTA */
+/* CTA SECTION */
 #cta {
   text-align: center;
   margin: 60px 0;
@@ -165,9 +195,25 @@ header.hero {
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 20px;
-  font-size: 0.8rem;
-  color: #555;
+  padding: 25px;
+  font-size: 0.85rem;
+  background: #111;
+  color: #bbb;
+}
+
+footer .socials {
+  margin: 10px 0;
+}
+
+footer .socials a {
+  color: #F8D33A;
+  margin: 0 8px;
+  font-size: 1.4rem;
+  transition: 0.3s;
+}
+
+footer .socials a:hover {
+  color: #ffffff;
 }
 
 /* DARK MODE */
@@ -178,14 +224,14 @@ footer {
 }
 
 .dark .navbar {
-  background: rgba(25,25,25,0.8);
+  background: rgba(25, 25, 25, 0.85);
 }
 
 .dark .icon {
   color: #F8D33A;
 }
 
-/* FLOAT BUTTONS */
+/* FLOATING BUTTONS */
 .dark-toggle,
 .scroll-top {
   position: fixed;
@@ -194,6 +240,7 @@ footer {
   cursor: pointer;
   border: none;
   border-radius: 50%;
+  transition: transform 0.3s;
 }
 
 .dark-toggle {
@@ -209,6 +256,11 @@ footer {
   display: none;
 }
 
+.scroll-top:hover,
+.dark-toggle:hover {
+  transform: scale(1.1);
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .card, .test-card {
@@ -220,4 +272,6 @@ footer {
   .nav-links {
     gap: 12px;
   }
+  h1 { font-size: 2.2rem; }
+  .hero { padding: 40px; }
 }
